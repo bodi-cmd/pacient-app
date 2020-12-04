@@ -76,7 +76,7 @@ if (process.env.NODE_ENV !== 'production') {
     res.render('index.ejs')
   })
 
-  app.get('/myposts',checkAuthenticated, (req, res) => {
+  app.get('/myposts',checkAuthenticated,checkVerified ,(req, res) => {
     //console.log(users.find(user => user.email === email))
     connection.query('SELECT * FROM postari WHERE ID_P = ?',req.user.ID,function(error, response, fields) {
       if(error){console.log(error);throw error;}
@@ -195,12 +195,12 @@ if (process.env.NODE_ENV !== 'production') {
     next()
   }
 
- /* function checkVerified(req, res, next) {
-    if (req.user.nume) {
-      return res.redirect('/')
+  function checkVerified(req, res, next) {
+    if (req.user.VERIFICAT=='0') {
+      return res.redirect('/myprofile')
     }
     next()
-  }*/
+  }
 
   
   app.listen(process.env.PORT||3000)
