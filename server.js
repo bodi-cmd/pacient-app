@@ -31,23 +31,23 @@ if (process.env.NODE_ENV !== 'production') {
 
 
   var connection = mysql.createConnection({
-    // host     : process.env.SQL_HOST,
-    // user     : process.env.SQL_USER,
-    // password : process.env.SQL_PASS,
-    //   database : process.env.SQL_DB
-    host     : 'eu-cdbr-west-03.cleardb.net',
-    user     : 'b36d7b62d710c8',
-    password : '2e88abef',
-    database : 'heroku_8b5e243ac7dedc4'
+    host     : process.env.SQL_HOST,
+    user     : process.env.SQL_USER,
+    password : process.env.SQL_PASS,
+      database : process.env.SQL_DB
+    // host     : 'eu-cdbr-west-03.cleardb.net',
+    // user     : 'b36d7b62d710c8',
+    // password : '017b695a12d9f31',
+    // database : 'heroku_8b5e243ac7dedc4'
   });
 
 
   function handleDisconnect() {
     var connection = mysql.createConnection({
-      host     : 'eu-cdbr-west-03.cleardb.net',
-      user     : 'b36d7b62d710c8',
-      password : '2e88abef',
-      database : 'heroku_8b5e243ac7dedc4'
+      host     : process.env.SQL_HOST,
+    user     : process.env.SQL_USER,
+    password : process.env.SQL_PASS,
+      database : process.env.SQL_DB
     }); // Recreate the connection, since
                                                     // the old one cannot be reused.
   
