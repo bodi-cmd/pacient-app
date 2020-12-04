@@ -1,10 +1,52 @@
-<ul>
-    <% for(var i=0; i<posts.length; i++) {%>
-       <li><pre><%=posts[i].SIMPTOME %></pre><%=posts[i].STATUS %></li>
-    <% } %>
-    </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/posts.css">
+<body>
+    <div class="box">
+        <img src="./img/med.png" class="img">
+        
+        <div class="title">
+            <p>MedApp</p>
+          </div>
+      </div>
+      
+        <button id="profile" class="button button1">Profilul meu</button>
+        <button id="disconnect" class="button button2">Deconecteaza-ma</button>
 
-<form action="/new_post" method="POST">
-   <input type="text" name="simptome" placeholder="simptome">
-   <button type="submit">trimite</button>
-</form>
+        <div id="searchbox">
+          <form action="/new_post" method="POST">
+            
+          <textarea name="simptome">Adaugati un simptom</textarea>
+          <button type="submit" class="buttonbtn">Adaugati</button>
+          </form>
+          <br>
+        </div>
+        <div class="container">
+          <% for(var i=0; i<posts.length; i++) {%>
+            <div class="post">
+              <pre><%=posts[i].SIMPTOME%></pre>
+              <p>Status: <%=posts[i].STATUS%></p>
+              <button>Confirma</button>
+          </div>
+         <% } %>
+        </div>
+       
+</body>
+<script>
+  document.getElementById("profile").addEventListener('click', function(){
+  window.location.href = "/myprofile";
+
+});
+document.getElementById("disconnect").addEventListener('click', function(){
+  window.location.href = "/logout";
+
+});
+</script>
+
+<html>

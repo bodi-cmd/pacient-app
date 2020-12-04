@@ -1,0 +1,148 @@
+body{
+    background:#023436;
+}
+.box{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:90%;
+    background-color:#00BFB3;
+
+  }
+  .button1{
+    position:absolute;
+    top:1%;
+    left:75%;
+    border: none;
+    color: #023436;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 8px 4px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    height:40px;
+    width:150px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+  }
+  .button2{
+    position:absolute;
+    top:1%;
+    left:86%;
+    border: none;
+    color: #023436;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 8px 4px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    height:40px;
+    width:180px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+  }
+  .button1 {
+    background-color: #023436; 
+    color: #ffff; 
+
+  }
+
+  .button1:hover {
+    opacity:0.5;
+    border-radius: 20px;
+  }
+
+  .button2 {
+    background-color:#023436; 
+    color: #ffff; 
+  }
+
+  .button2:hover {
+    opacity:0.5;
+    border-radius: 20px;
+  }
+  .img{
+    position:absolute;
+    top:6%;
+    left:3%;
+    width:60px;
+    height:60px;
+  }
+  .title{
+    font-family: 'Do Hyeon', sans-serif;
+    position:absolute;
+    top: -15%;
+    left:8%;
+    font-size:30px;
+    color:#ffff;
+  }
+
+#searchbox{
+    width:60vw;
+    margin-left:20vw;
+    margin-top:100px;
+}
+#searchbox form{
+    position:relative;
+}
+#searchbox textarea{
+    position:absolute;
+    width:100%;
+    resize:none;
+    border:none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    height:150px;
+    padding:10px 10px;
+    
+}
+#searchbox button{
+    position:absolute;
+    top:90px;
+    right:10px;
+    width:100px;
+    height:50px;
+    background: #00BFB3;
+    border:none;
+}
+*:focus {outline:0;}
+
+
+.post{
+    width:60vw;
+    margin-left:20vw;
+    background:#19231a;
+    min-height:100px;
+    margin-top:150px;
+    margin-bottom:-120px;
+    overflow:hidden;
+}
+.post pre{
+    width:80%;
+    color:white;
+    font-size:20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left:10px;
+    float:left;
+
+}
+.post p{
+    padding-top:10px;
+    text-align: center;
+    color:red;
+    
+}
+.post button{
+    width:100px;
+    height:50px;
+    background: #00BFB3;
+    border:none;
+    margin-left:65px;
+
+}

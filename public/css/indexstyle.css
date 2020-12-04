@@ -124,6 +124,8 @@ form .longmain{
     width: 100%;
     margin-bottom: 10px;
 }
+*:focus {outline:0;}
+
 form .longmain:nth-child(odd){
     width: 50%;
     float: left;
