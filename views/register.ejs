@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+    <div class="hero">
+     <img src="./img/doctor.jpg" style="float:left;position: absolute; width: 700px;bottom: 1vh;left:12vh" alt="Doctor">
+     <h1 style="position: absolute;top: 22vh;left: 22vh;width: 700px;color: #07686b">Împreună respectăm distanțarea socială.</h1>
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" id="buton1" class="toggle-btn">Autentificare</button>
+                <button type="button" id="buton2" class="toggle-btn">Înregistrare</button>
+            </div>
+            <form action="/register" method="POST" id="register" class="input-group">
+                <input type="text" name="nume" class="input-field" placeholder="Nume de familie" required>
+                <input type="text" name="prenume" class="input-field" placeholder="Prenume" required>
+                <input type="email" name="email" class="input-field" placeholder="Adresă de email">
+                <input type="password" name="password" class="input-field" placeholder="Parola">
+                <input name="birth" type="text" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" placeholder="Data de nastere" class="input-field" required>
+                <input type="text" name="telefon" class="input-field" placeholder="Telefon" required>
+                <label aria-placeholder="true"></label>
+                    <select name="sex" class="input-field">
+                    <option value="" selected="" disabled="">Alege sexul</option>
+                    <option value="m">Barbat</option>
+                    <option value="f">Femeie</option>
+                    </select>
+                <button type="submit" class="submit-btn">Inregistrare</button>
+            </form>
+        </div>        
+    </div>
+    <script src="./js/register.js"></script>
+</body>
+</html>

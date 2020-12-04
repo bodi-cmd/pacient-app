@@ -1,0 +1,10 @@
+<ul>
+    <% for(var i=0; i<posts.length; i++) {%>
+       <li><pre><%=posts[i].SIMPTOME %></pre><%=posts[i].STATUS %></li>
+    <% } %>
+    </ul>
+
+<form action="/new_post" method="POST">
+   <input type="text" name="simptome" placeholder="simptome">
+   <button type="submit">trimite</button>
+</form>

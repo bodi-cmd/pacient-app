@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <div class="hero">
+        <img src="./img/doctor.jpg" style="float:left;position: absolute; width: 700px;bottom: 1vh;left:12vh;" alt="Doctor">
+     <h1 style="position: absolute;top: 22vh;left: 22vh;width: 700px;color: #07686b;">Împreună respectăm distanțarea socială.</h1>
+        <div class="form-box">
+            
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" id="buton1" class="toggle-btn">Autentificare</button>
+                <button type="button" id="buton2" class="toggle-btn">Înregistrare</button>
+            </div>
+            <% if(messages.error){ %> 
+                <h1 style="color: red;font-size:20px;text-align:center;"><%= messages.error %></h1>
+            <% } %> 
+                <form action="/login" method="POST" id="login" class="input-group">
+                <input type="email" name="email" class="input-field" placeholder="Email-ul de autentificare" required>
+                <input type="password" name="password" class="input-field" placeholder="Parola" required>
+                <button type="submit" class="submit-btn">Conectare</button>
+                </form>
+        </div>        
+    </div>
+    <script src="./js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+*{
+    font-family: 'Do Hyeon', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #023436;
+}
+.container{
+    position: absolute;
+    float: left;
+    background-size: cover;
+    align-items: center;
+    margin-top: 110px;
+    margin-left: 100px;
+}
+form{
+    
+    width: 370px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: #fff;
+    float: left;
+}
+form .logo{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #023436;
+    margin-top: 20px;
+    font-family: "Cursive";
+}
+form .user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0 15px 0;
+}
+form .user img{
+    border: 2px solid #023436;
+    border-radius: 50%;
+    padding: 2px;
+}
+form .main{
+    width: 100%;
+    margin-bottom: 10px;
+}
+form .main:nth-child(odd){
+    width: 50%;
+    float: left;
+}
+form .main:nth-child(even){
+    width: 50%;
+    float: right;
+}
+form .main label{
+    color: #000;
+    margin-left: 15px;
+    text-align: center;
+    font-family: "Montserrat",sans-serif;
+    font-size: 14px;
+    display: flex;
+}
+form .main input{
+    width: 160px;
+    outline: none;
+    margin:15px;
+    color: #023436;
+    font-size: 14px;
+    padding: 4px 15px;
+    border: 1px solid #023436;
+    border-radius: 4px;
+    background: transparent;
+}
+::placeholder{
+    font-size: 14px;
+    color: #023436;
+}
+form .main select{
+    width: 160px;
+    height: 25px;
+    margin: 15px;
+    outline: none;
+    border-radius: 4px;
+    background: transparent;
+}
+form .btn{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 25px 0;
+    border: 5px;
+    border-color: #023436;
+}
+form .btn .button{
+    width: 165px;
+    background: #00BFB3;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-family: "Montserrat",sans-serif;
+    font-size: 14px;
+    margin: 15px;
+    padding: 8px 20px;
+}
+form .btn .button:hover{
+    background: #023436;
+    transition: .7s;
+}
+#text
+{
+    position: absolute;
+    margin-top: 260px;
+    margin-left: 700px;
+    color: #fff;
+    font-size: 80px;
+}
+form .longmain{
+    width: 100%;
+    margin-bottom: 10px;
+}
+form .longmain:nth-child(odd){
+    width: 50%;
+    float: left;
+}
+form .longmain:nth-child(even){
+    width: 50%;
+    float: right;
+}
+form .longmain label{
+    color: #000;
+    margin-left: 15px;
+    text-align: center;
+    font-family: "Montserrat",sans-serif;
+    font-size: 14px;
+    display: flex;
+    width:340px;
+}
+form .longmain input{
+    width: 340px;
+    outline: none;
+    margin:15px;
+    color: #023436;
+    font-size: 14px;
+    padding: 4px 15px;
+    border: 1px solid #023436;
+    border-radius: 4px;
+    background: transparent;
+}
+.box{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:90%;
+    background-color:#00BFB3;
+  
+  }
+  .button1{
+    position:absolute;
+    top:1%;
+    left:75%;
+    border: none;
+    color: #023436;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 8px 4px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    height:40px;
+    width:150px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+  }
+  .button2{
+    position:absolute;
+    top:1%;
+    left:86%;
+    border: none;
+    color: #023436;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 8px 4px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    height:40px;
+    width:180px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+  }
+  .button1 {
+    background-color: #023436; 
+    color: #ffff; 
+  
+  }
+  
+  .button1:hover {
+    opacity:0.5;
+    border-radius: 20px;
+  }
+  
+  .button2 {
+    background-color:#023436; 
+    color: #ffff; 
+  }
+  
+  .button2:hover {
+    opacity:0.5;
+    border-radius: 20px;
+  }
+  .img{
+    position:absolute;
+    top:6%;
+    left:3%;
+    width:60px;
+    height:60px;
+  }
+  .title{
+    font-family: 'Do Hyeon', sans-serif;
+    position:absolute;
+    top: 20%;
+    left:8%;
+    font-size:30px;
+    color:#ffff;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MedApp</title>
+    <link rel="stylesheet" type="text/css" href="./css/indexstyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="box">
+        <img src="./img/med.png" class="img">
+
+        <div class="title">
+            <p>MedApp</p>
+          </div>
+      </div>
+            <button id="logout" class="button button2">Deconecteaza-te</button>
+            <button id="myposts"class="button button1">Simptome</button>
+    <div class="container">
+    <form action="/myprofile" method="POST">
+    <h2 class="logo" style="font-family: Do Hyeon;">Profil</h2>
+    <div class="user">
+        <img src="./img/User.png" height="60px" width="60px">
+    </div>
+    <div class="main">
+        <label>Nume:</label>
+        <input type="text" name="nume" placeholder="Nume"  value="<%= user.NUME%>" required>
+    </div>
+    <div class="main">
+        <label>Prenume:</label>
+        <input type="text" name="prenume" placeholder="Prenume"  value="<%= user.PRENUME%>" required>
+    </div>
+    <div class="main">
+        <label>Email:</label>
+        <input type="email" name="email" placeholder="email@email.com" value="<%= user.EMAIL%>"  required>
+    </div>
+    <div class="main">
+        <label>Parolă:</label>
+        <input type="text" name="" placeholder="*******">
+    </div>
+    <div class="main">
+        <label>Adresă:</label>
+        <input type="text" name="adresa" placeholder="Domiciliu" value="<%= user.ADRESA%>"  required>
+    </div>
+    <div class="main">
+        <label>Telefon:</label>
+        <input type="text" name="telefon" value="<%= user.TELEFON%>"  placeholder="Numar de telefon">
+    </div>
+    <div class="main">
+        <label>Sex:</label>
+        <select name="sex">
+            <option value="m">Barbat</option>
+            <option value="f">Femeie</option>
+        </select>
+    </div>
+    <div class="main">
+        <label>Data nașterii:</label>
+        <input type="date" name="birth" placeholder="Parola" value="<%= user.NASTERE%>">
+    </div>
+    <div class="longmain">
+        <label>Afecțiuni deja existente si mențiuni:</label>
+        <input type="text" name="diagnostice" value="<%= user.DIAGNOSTICE%>"  placeholder="Completati">
+    </div>
+    <div class="btn">
+        <input type="submit" class="button" value="Actualizeaza">
+    </div>
+
+</form>
+</div>
+</body>
+<h1 id="text">Actualizează-ți datele simplu si ușor!</h1>
+<script>
+    document.getElementById("logout").addEventListener('click', function(){
+    window.location.href = "/logout";
+
+});
+</script>
+</html>

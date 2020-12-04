@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixit</title>
+</head>
+<body>
+
+    <div>
+        <input type="text" id="search" placeholder="Search..." name="search">
+        <button>Search</button>
+        <div id="container">
+
+        </div>
+    </div>
+    <a href="/login">Log in!</a>
+</body>
+
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    getLocation()
+ });
+
+        
+ function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    alert("Geolocation is not supported by this browser.");
+  }
+}
+
+function showPosition(position) {
+ // x.innerHTML = "Latitude: " + position.coords.latitude + 
+ // "<br>Longitude: " + position.coords.longitude;
+ console.log(position)
+  $.get('/search?serv='+$("#search").val()+'&lat='+position.coords.latitude+'&long='+position.coords.longitude, function(data, status){
+        
+        for(var i=0;i<data.length;i++){
+            console.log(data[0])
+            $("#container").append("<pre>\n"+JSON.stringify(data[i].LAT)+"</pre>");
+        }
+    });
+}
+
+
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+     alert("User denied the request for Geolocation.")
+      break;
+    case error.POSITION_UNAVAILABLE:
+    alert("Location information is unavailable.")
+      break;
+    case error.TIMEOUT:
+    alert("The request to get user location timed out.")
+      break;
+    case error.UNKNOWN_ERROR:
+    alert( "An unknown error occurred.")
+      break;
+  }
+}
+});
+</script>
+</html>
+
