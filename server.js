@@ -112,7 +112,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
   
 
-  app.get('/', (req, res) => {
+  app.get('/',checkNotAuthenticated, (req, res) => {
     res.render('index.ejs')
   })
 
@@ -230,7 +230,7 @@ if (process.env.NODE_ENV !== 'production') {
   }
   function checkNotAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
-      return res.redirect('/')
+      return res.redirect('/myposts')
     }
     next()
   }
