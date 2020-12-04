@@ -31,11 +31,58 @@ if (process.env.NODE_ENV !== 'production') {
 
 
   var connection = mysql.createConnection({
-    host     : process.env.SQL_HOST,
-    user     : process.env.SQL_USER,
-    password : process.env.SQL_PASS,
-      database : process.env.SQL_DB
+    // host     : process.env.SQL_HOST,
+    // user     : process.env.SQL_USER,
+    // password : process.env.SQL_PASS,
+    //   database : process.env.SQL_DB
+    host     : 'eu-cdbr-west-03.cleardb.net',
+    user     : 'b36d7b62d710c8',
+    password : '2e88abef',
+    database : 'heroku_8b5e243ac7dedc4'
   });
+
+
+  function handleDisconnect() {
+    var connection = mysql.createConnection({
+      host     : 'eu-cdbr-west-03.cleardb.net',
+      user     : 'b36d7b62d710c8',
+      password : '2e88abef',
+      database : 'heroku_8b5e243ac7dedc4'
+    }); // Recreate the connection, since
+                                                    // the old one cannot be reused.
+  
+    connection.connect(function(err) {              // The server is either down
+      if(err) {                                     // or restarting (takes a while sometimes).
+        console.log('error when connecting to db:', err);
+        setTimeout(handleDisconnect, 2000); // We introduce a delay before attempting to reconnect,
+      }                                     // to avoid a hot loop, and to allow our node script to
+    });                                     // process asynchronous requests in the meantime.
+                                            // If you're also serving http, display a 503 error.
+    connection.on('error', function(err) {
+      console.log('db error', err);
+      if(err.code === 'PROTOCOL_CONNECTION_LOST') { // Connection to the MySQL server is usually
+        handleDisconnect();                         // lost due to either server restart, or a
+      } else {                                      // connnection idle timeout (the wait_timeout
+        throw err;                                  // server variable configures this)
+      }
+    });
+  }
+  
+  handleDisconnect();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   //PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET 
@@ -196,4 +243,4 @@ if (process.env.NODE_ENV !== 'production') {
   }*/
 
   
-  app.listen(3000)
+  app.listen(process.env.PORT||3000)
