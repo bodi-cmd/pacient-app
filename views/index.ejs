@@ -1,70 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixit</title>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+<style type="text/css">
+
+* {
+  box-sizing: border-box;
+}
+.image{
+  background: url("./img/back1.jpg");
+  background-size: 100%;
+  position: fixed;
+  height: 1000px;
+  left:0;
+  right:0;
+  z-index: -1;
+  filter:blur(5px);
+}
+.box{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:90%;
+  background-color:#255C99;
+  
+}
+.button1{
+  position:absolute;
+  top:1%;
+  left:75%;
+  border: none;
+  color: #fec601;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 8px 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  height:40px;
+  width:150px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.button2{
+  position:absolute;
+  top:1%;
+  left:86%;
+  border: none;
+  color: #fec601;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 8px 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 10px;
+  height:40px;
+  width:150px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.button1 {
+  background-color: #FCA311; 
+  color: #ffff; 
+  
+}
+
+.button1:hover {
+  opacity:0.5;
+  border-radius: 20px;
+}
+
+.button2 {
+  background-color:#FCA311; 
+  color: #ffff; 
+}
+
+.button2:hover {
+  opacity:0.5;
+  border-radius: 20px;
+}
+.button-centru{
+  background:none;
+  position:absolute;
+  top:55%;
+  left:41%;
+  border: none;
+  color: #000000;
+  padding: 5px 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 8px 4px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 40px;
+  height:60px;
+  width:200px;
+  opacity:0.5;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.75);
+}
+.button-centru:hover{
+  opacity:0.8;
+  color:#1a1a1a;
+  border-radius: 25px;
+  transform: scale(1.1);
+  background-color:rgba(114, 114, 114, 0.75)
+}
+h1{
+  font-size:50px;
+  position:absolute;
+  top:40%;
+  left:40%;
+}
+.img{
+  position:absolute;
+  top:6%;
+  left:3%;
+  width:60px;
+  height:60px;
+}
+.title{
+  font-family: 'Montserrat', sans-serif;
+  position:absolute;
+  top:-1.5%;
+  left:8%;
+  font-size:30px;
+  color:#ffff;
+}
+.content{
+  position:absolute;
+  top:35%;
+  left:32%;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size:35px;
+  text-align:center;
+  color:#242424;
+  opacity:0.9;
+
+}
+</style>
 </head>
 <body>
+  <div class="image"></div>
 
-    <div>
-        <input type="text" id="search" placeholder="Search..." name="search">
-        <button>Search</button>
-        <div id="container">
 
-        </div>
-    </div>
-    <a href="/login">Log in!</a>
+
+<div class="box">
+  <img src="./img/med.png" class="img">
+</div>
+
+
+  <button class="button button1">Inregistreaza-te</button>
+  <button class="button button2">Conecteaza-te</button>
+  <button class="button-centru">Contacteaza-ne</button>
+
+
+
+<div class="title">
+  <p>MedApp</p>
+</div>
+
+
+<div class="content">
+  <p>Peste 100.000 de mii de utilizatori!<br>Apeleaza chiar acum la un doctor! </p>
+</div>
+
+
 </body>
-
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-    getLocation()
- });
-
-        
- function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition, showError);
-  } else { 
-    alert("Geolocation is not supported by this browser.");
-  }
-}
-
-function showPosition(position) {
- // x.innerHTML = "Latitude: " + position.coords.latitude + 
- // "<br>Longitude: " + position.coords.longitude;
- console.log(position)
-  $.get('/search?serv='+$("#search").val()+'&lat='+position.coords.latitude+'&long='+position.coords.longitude, function(data, status){
-        
-        for(var i=0;i<data.length;i++){
-            console.log(data[0])
-            $("#container").append("<pre>\n"+JSON.stringify(data[i].LAT)+"</pre>");
-        }
-    });
-}
-
-
-
-function showError(error) {
-  switch(error.code) {
-    case error.PERMISSION_DENIED:
-     alert("User denied the request for Geolocation.")
-      break;
-    case error.POSITION_UNAVAILABLE:
-    alert("Location information is unavailable.")
-      break;
-    case error.TIMEOUT:
-    alert("The request to get user location timed out.")
-      break;
-    case error.UNKNOWN_ERROR:
-    alert( "An unknown error occurred.")
-      break;
-  }
-}
-});
-</script>
 </html>
-
