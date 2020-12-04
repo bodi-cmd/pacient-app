@@ -39,7 +39,10 @@ if (process.env.NODE_ENV !== 'production') {
       database : process.env.SQL_DB
   }
 
-  const connection = mysql.createPool({ connectionLimit: 5, db_data }); 
+  const connection = mysql.createPool({ connectionLimit: 5,host     : process.env.SQL_HOST,
+    user     : process.env.SQL_USER,
+    password : process.env.SQL_PASS,
+      database : process.env.SQL_DB }); 
 
 
   //PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET PASSPORT SET 
