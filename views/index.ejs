@@ -162,9 +162,9 @@ h1{
 </div>
 
 
-  <button class="button button1">Inregistreaza-te</button>
-  <button class="button button2">Conecteaza-te</button>
-  <button class="button-centru">Contacteaza-ne</button>
+  <button id="inreg"class="button button1">Inregistreaza-te</button>
+  <button id="login"class="button button2">Conecteaza-te</button>
+  <button id="contact"class="button-centru">Contacteaza-ne</button>
 
 
 
@@ -179,4 +179,18 @@ h1{
 
 
 </body>
+<script>
+  document.getElementById("inreg").addEventListener('click', function(){
+  window.location.href = "/register";
+
+});
+document.getElementById("login").addEventListener('click', function(){
+  window.location.href = "/login";
+
+});
+document.getElementById("contact").addEventListener('click', function(){
+  window.location.href = "/login";
+
+});
+</script>
 </html>
