@@ -1,4 +1,5 @@
 # MedApp
+###### powered by Seagulls :ocean: :rooster:
 #### O aplicatie care are ca scop realizarea unei conexiuni directe intre orice pacient, medic, dar si curier.
 
 Structura platformei este este formata din 3 servere Nodejs (fiecare se afla pe cate un **branch**), toate avand o baza de date comuna mySQL.
