@@ -1,0 +1,89 @@
+* {
+  font-family: "Do Hyeon";
+}
+.imagine{
+  background-image:url("/img/fundal.jpg");
+  background-size: 100%;
+  position: fixed;
+  height: 1000px;
+  left:0;
+  right:0;
+  z-index: -1;
+  filter:blur(5px);
+}
+body{
+  margin: 0; 
+}
+.content-table {
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+  font-size: 0.9em;
+  min-width: 400px;
+  width: 75vw;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #2b2d42;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid #2b2d42;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+.content-table th
+{
+  font-size: 20px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #edf2f4;
+  border-bottom: 2px solid #2b2d42;
+}
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #8d99ae;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #8d99ae;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #2b2d42;
+}
+
+.topnav a {
+  float: right;
+  color: #fff;
+  text-align: center;
+  padding: 24.5px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #D9DBF1;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #d80032;
+  color: white;
+}
+a
+{
+  text-decoration: none;
+  color: #000;
+}
+.content-table tbody tr{
+  background: #8d99ae;
+}

@@ -55,7 +55,7 @@ if (process.env.NODE_ENV !== 'production') {
   //PASSPORT FUNCTION DATABASE           PASSPORT FUNCTION DATABASE        PASSPORT FUNCTION DATABASE         PASSPORT FUNCTION DATABASE
  function Getuser(email){
   return new Promise(function(resolve, reject) {
-    connection.query('SELECT * FROM doctori WHERE EMAIL = ?',email, function(error, response, fields) {
+    connection.query('SELECT * FROM curieri WHERE EMAIL = ?',email, function(error, response, fields) {
      // console.log("---" +response[0]+"---")
        resolve(response[0]);
          });
@@ -63,7 +63,7 @@ if (process.env.NODE_ENV !== 'production') {
   }
   function Getuserbyid(id){
     return new Promise(function(resolve, reject) {
-      connection.query('SELECT * FROM doctori WHERE ID = ?',id, function(error, response, fields) {
+      connection.query('SELECT * FROM curieri WHERE ID = ?',id, function(error, response, fields) {
         if(error){ console.log(error);throw error;}
        // console.log("===" +response[0]+"===")
          resolve(response[0]);
@@ -74,7 +74,7 @@ if (process.env.NODE_ENV !== 'production') {
 
   app.get('/',checkAuthenticated, (req, res) => {
 
-    connection.query('SELECT postari.ID, NUME, PRENUME, SEX, NASTERE FROM postari INNER JOIN pacienti ON pacienti.ID=postari.ID_P WHERE postari.STATUS = "Inregistrata" ', function(error, response, fields) {
+    connection.query('SELECT postari.ID,ADRESA, NUME, PRENUME, SEX, NASTERE FROM postari INNER JOIN pacienti ON pacienti.ID=postari.ID_P WHERE postari.STATUS = "Spre Curier" ', function(error, response, fields) {
       if(error){console.log(error);throw error;}
       else{
         res.render('index.ejs',{posts:response})
@@ -82,32 +82,26 @@ if (process.env.NODE_ENV !== 'production') {
         });
   })
 
-  app.get('/pacient',checkAuthenticated, (req, res) => {
+
+  app.get('/comanda',checkAuthenticated, (req, res) => {
 
     connection.query('SELECT * FROM postari INNER JOIN pacienti ON pacienti.ID=postari.ID_P WHERE postari.ID ='+req.query.id, function(error, response, fields) {
       if(error){console.log(error);throw error;}
       else{
         console.log(response);
-        res.render('pacient.ejs',{user:response[0],id:req.query.id});
+        res.render('comanda.ejs',{user:response[0],id:req.query.id});
       }
         });
   })
 
-  app.post('/reteta',checkAuthenticated,(req,res)=>{
-
-    const update_post = {
-      RETETA:req.body.reteta,
-      STATUS:'Validata'
-    }
-
-    connection.query('UPDATE postari SET ? WHERE ID = '+req.body.id_postare ,update_post,function(error, response, fields) {
+  app.post('/preluare',checkAuthenticated,(req,res)=>{
+    connection.query('UPDATE postari SET STATUS = "Expediata" WHERE ID = '+req.body.id,function(error, response, fields) {
       if(error){console.log(error);throw error;}
       else{
         res.redirect('/');
       }
   });
   })
-  
 
  
   app.get('/login', checkNotAuthenticated, (req, res) => {
@@ -120,6 +114,38 @@ if (process.env.NODE_ENV !== 'production') {
     failureFlash: true
   })) 
   
+  app.get('/register', checkNotAuthenticated, (req, res) => {
+    res.render('register.ejs')
+  })
+  
+
+
+  app.post('/register', checkNotAuthenticated, async (req, res) => {
+    try {
+      const hashedPassword = await bcrypt.hash(req.body.password, 10)
+
+      const cont = {
+        NUME:req.body.nume,
+        PRENUME:req.body.prenume,
+        EMAIL:req.body.email,
+        PAROLA:hashedPassword,
+        TELEFON:req.body.telefon,
+        NASTERE:req.body.birth
+        };
+
+        connection.query('INSERT INTO curieri SET ?', cont, (err, response) => {
+              if(err){ 
+                res.send(err);
+                throw err;
+                }
+              console.log('Last insert ID:', response.insertId);
+              res.redirect('/login')
+            });
+    } catch {
+      res.redirect('/register')
+    }
+  })
+
   app.get('/logout', (req, res) => {
     req.logOut()
     res.redirect('/login')
@@ -140,4 +166,4 @@ if (process.env.NODE_ENV !== 'production') {
   }
 
   
-  app.listen(process.env.PORT||3001)
+  app.listen(process.env.PORT||3002)

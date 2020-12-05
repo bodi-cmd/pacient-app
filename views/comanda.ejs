@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cosul Meu</title>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap" rel="stylesheet">
+<style type="text/css">
+body{
+    margin:0;
+    font-family: 'Do Hyeon', sans-serif;
+    background:#edf2f4;
+}
+.imageback{
+  background: url("/img/fundal.jpg");
+  background-size: 100%;
+  position: fixed;
+  height: 1000px;
+  left:0;
+  right:0;
+  z-index: -1;
+  filter:blur(5px);
+}
+.topnav {
+    overflow: hidden;
+    background-color: #2b2d42;
+  }
+
+  .topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 23px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav a:hover {
+    background-color: #D9DBF1;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #d80032;
+    color: white;
+  }
+  .cosulmeu{
+      float:left;
+      width:900px;
+      height:320px;
+      margin-top:100px;
+      margin-left:130px;
+      border-radius:5px;
+      background-color:#8d99ae;
+      font-family: 'Do Hyeon', sans-serif;   
+      padding:20px;
+      box-shadow: 3px 2px 9px 0px rgba(50, 50, 50, 0.75);
+  }
+  .cosulmeu h1{
+      margin-top:2px;
+      margin-left:20px;
+      color:rgb(46, 45, 45);
+  }
+  textarea{
+        margin-top:13.35px;
+        margin-left:22px;
+        width: 850px;;
+        height: 183px;
+        background-color: #fff;
+        font-size: 16px;
+        resize: none;
+        box-shadow: 3px 2px 9px 0px rgba(50, 50, 50, 0.75);
+        border-radius:5px;
+        border:none;
+        
+  }
+  *:focus{outline:none;}
+  .menu{
+      margin-top:100px;
+      margin-left:50px;
+     float:left;
+      width:300px;
+      height:500px;
+      background-color:#8d99ae;
+      border-radius:5px;
+      box-shadow: 3px 2px 9px 0px rgba(50, 50, 50, 0.75);
+      letter-spacing: 1px;
+      font-family: 'Do Hyeon', sans-serif;
+      text-align:center;
+  }
+      .menu h1{
+   color:rgb(58, 58, 58);
+      }
+  
+  .casuta {
+  width: 90%;
+  padding:8px 16px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color:#fff;
+
+}
+.butoncomanda{
+    margin-top:25px;
+    background:none;
+    font-size:15px;
+    border-radius:5px;
+    font-family: 'Do Hyeon', sans-serif;
+    padding:5px 10px;
+    transition:0.3s;
+    background:#2d3142;
+    border:none;
+}
+.butoncomanda:hover{
+    background:#2d3142;
+    transform: scale(1.1);
+    border-radius:5px;
+    transition:0.3s;
+
+}
+span{
+    color:#fff;
+}
+</style>
+</head>
+<body>
+    <div class="imageback"></div>
+    <div class="topnav">
+        <img src="med.png" alt="" style="float:left;height: 55px;margin-left:20px;">
+        <p style="float:left;color:white;font-size:24px;padding:0;margin-top:10px;">MedApp</p>
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+    </div>
+
+
+<div class="cosulmeu">
+    <h1>Cosul Meu</h1>
+   <textarea><%= user.RETETA %></textarea>
+</div>
+
+
+
+<div class="menu">
+    
+
+      <h1>Detalii destinatar</h1>
+
+      <form action="/preluare" method="POST">
+        <input style="display: none;" name="id" value="<%= id %> " type="text">
+        
+        <label for="fname">Nume</label>
+        <div class="casuta"><%= user.NUME %></div>
+        
+
+        <label for="lname">Prenume</label>
+        <div class="casuta"><%= user.PRENUME %></div>
+        
+
+        <label for="fname">Adresa</label>
+        <div class="casuta"><%= user.ADRESA %></div>
+        
+
+        <label for="lname">Telefon</label>
+        <div class="casuta"><%= user.TELEFON %></div>
+        
+    <button type="submit" class="butoncomanda"><span>Preluati comanda</span></button>
+     </form>
+    
+</div>
+
+
+    </body>
+    </html>
