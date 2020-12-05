@@ -3,15 +3,14 @@
 
 Structura platformei este este formata din 3 servere Nodejs, toate avand o baza de date comuna mySQL.
 
-####Tehnologii utilizate:
+#### Tehnologii utilizate:
 
-*HTML,CSS,Javascript
-*NodeJS
-  *bcrypt
-  *express
-  *express-session
-  *passport
-  *ejs
-  *
-*mySQL
+* HTML,CSS,Javascript
+* NodeJS
+  * bcrypt
+  * express
+  * express-session
+  * passport
+  * ejs
+* mySQL
 
