@@ -14,3 +14,6 @@ Structura platformei este este formata din 3 servere Nodejs, toate avand o baza 
   * ejs
 * mySQL
 
+### Linkuri platforme:
+ * [Pacienti](http://medappnow.herokuapp.com)
+
