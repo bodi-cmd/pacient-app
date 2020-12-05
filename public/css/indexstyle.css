@@ -12,7 +12,7 @@ body{
     float: left;
     background-size: cover;
     align-items: center;
-    margin-top: 110px;
+    margin-top: 30px;
     margin-left: 100px;
 }
 form{
@@ -108,6 +108,8 @@ form .btn .button{
     margin: 15px;
     padding: 8px 20px;
 }
+
+
 form .btn .button:hover{
     background: #023436;
     transition: .7s;
@@ -236,7 +238,29 @@ form .longmain input{
   }
 
 
-
+  .topnav {
+    overflow: hidden;
+    background-color: #00BFB3;
+  }
+  
+  .topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding:20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .topnav a.active {
+    background-color: #023436;
+    color: white;
+  }
 
 
 

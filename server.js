@@ -103,8 +103,6 @@ if (process.env.NODE_ENV !== 'production') {
         ADRESA:req.body.adresa,
         EMAIL:req.body.email,
         TELEFON:req.body.telefon,
-        NASTERE:req.body.birth,
-        SEX:req.body.sex,
         VERIFICAT:1,
         DIAGNOSTICE:req.body.diagnostice
     }
@@ -112,6 +110,24 @@ if (process.env.NODE_ENV !== 'production') {
       if(error){console.log(error);throw error;}
       else{
         res.redirect('/myprofile');
+      }
+  });
+  })
+
+  app.post('/comanda',checkAuthenticated,(req,res)=>{
+    connection.query('UPDATE postari SET STATUS = "Spre Curier" WHERE ID = '+req.body.id,function(error, response, fields) {
+      if(error){console.log(error);throw error;}
+      else{
+        res.redirect('/myposts');
+      }
+  });
+  })
+
+  app.post('/sterge',checkAuthenticated,(req,res)=>{
+    connection.query('DELETE FROM postari WHERE ID= '+req.body.id, function(error, response, fields) {
+      if(error){console.log(error);throw error;}
+      else{
+        res.redirect('/myposts');
       }
   });
   })
@@ -149,6 +165,8 @@ if (process.env.NODE_ENV !== 'production') {
     res.render('register.ejs')
   })
   
+
+
   app.post('/register', checkNotAuthenticated, async (req, res) => {
     try {
       const hashedPassword = await bcrypt.hash(req.body.password, 10)
