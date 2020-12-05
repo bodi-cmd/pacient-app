@@ -26,11 +26,10 @@ Structura platformei este este formata din 3 servere Nodejs (fiecare se afla pe 
  ![1](https://raw.githubusercontent.com/bodi-cmd/pacient-app/main/screenshots/1.jpg?token=AQUQX2SF5UODNDHSETY3VFK72U6DA)
  ![1](https://raw.githubusercontent.com/bodi-cmd/pacient-app/main/screenshots/2.jpg)
  ![1](https://raw.githubusercontent.com/bodi-cmd/pacient-app/main/screenshots/3.jpg)
- ![1](https://raw.githubusercontent.com/bodi-cmd/pacient-app/main/screenshots/4.jpg)
  ![1](https://raw.githubusercontent.com/bodi-cmd/pacient-app/main/screenshots/6.jpg)
  ![1](https://raw.githubusercontent.com/bodi-cmd/pacient-app/main/screenshots/7.jpg)
- ![1](https://raw.githubusercontent.com/bodi-cmd/pacient-app/main/screenshots/8.jpg)
- ![1](https://raw.githubusercontent.com/bodi-cmd/pacient-app/main/screenshots/9.jpg)
+ ![1](https://raw.githubusercontent.com/bodi-cmd/pacient-app/main/screenshots/12.jpg)
+ ![1](https://raw.githubusercontent.com/bodi-cmd/pacient-app/main/screenshots/11.jpg)
 
 
 
