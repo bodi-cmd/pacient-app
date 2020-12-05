@@ -82,16 +82,32 @@ if (process.env.NODE_ENV !== 'production') {
         });
   })
 
-  app.get('/pacient/:id_postare',checkAuthenticated, (req, res) => {
+  app.get('/pacient',checkAuthenticated, (req, res) => {
 
-    connection.query('SELECT * FROM postari INNER JOIN pacienti ON pacienti.ID=postari.ID_P WHERE postari.ID ='+req.params.id_postare, function(error, response, fields) {
+    connection.query('SELECT * FROM postari INNER JOIN pacienti ON pacienti.ID=postari.ID_P WHERE postari.ID ='+req.query.id, function(error, response, fields) {
       if(error){console.log(error);throw error;}
       else{
         console.log(response);
-        res.send(response)
+        res.render('pacient.ejs',{user:response[0],id:req.query.id});
       }
         });
   })
+
+  app.post('/reteta',checkAuthenticated,(req,res)=>{
+
+    const update_post = {
+      RETETA:req.body.reteta,
+      STATUS:'Validata'
+    }
+
+    connection.query('UPDATE postari SET ? WHERE ID = '+req.body.id_postare ,update_post,function(error, response, fields) {
+      if(error){console.log(error);throw error;}
+      else{
+        res.redirect('/');
+      }
+  });
+  })
+  
 
  
   app.get('/login', checkNotAuthenticated, (req, res) => {
