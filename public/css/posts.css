@@ -58,6 +58,7 @@ body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left:10px;
     float:left;
+    white-space: pre-wrap;
 
 }
 .post .reteta{
@@ -68,6 +69,7 @@ body{
   margin-left:10px;
   float:left;
   color:white;
+  white-space: pre-wrap;
 
 }
 .post p{
