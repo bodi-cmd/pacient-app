@@ -16,12 +16,13 @@
         <a href="/logout">Deconectare</a>
     </div>
     <div class="left">
-        <p style="text-decoration:underline;margin-left: 5%;font-size: 19px;"><span style="color:#009879;">D</span>etalii pacient</p>
+        <p style="text-decoration:underline;margin-left: 5%;font-size: 19px;">Detalii pacient</p>
         <p style="margin-left: 10%;">Nume:......................<%= user.NUME %></p>
         <p style="margin-left: 10%;">Prenume:...............<%= user.PRENUME %></p>
         <p style="margin-left: 10%;">Data nasterii:........<%= user.NASTERE %></p>
         <p style="margin-left: 10%;">Sex:...........................<%= user.SEX %></p>
         <p style="margin-left: 10%;">Telefon:...................<%= user.TELEFON %></p>
+        <p style="margin-left: 10%;">Afectiuni:...................<%= user.DIAGNOSTICE %></p>
         <div style="font-size: 20px;text-decoration:underline;margin-left: 5%">Simptome pacient</div>
         <div class="thought"><%= user.SIMPTOME %></div>
     </div>
